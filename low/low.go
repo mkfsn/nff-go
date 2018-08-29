@@ -70,8 +70,8 @@ func GetPort(n uint16) *Port {
 	return p
 }
 
-func CheckRSSPacketCount(p *Port) uint32 {
-	return uint32(C.checkRSSPacketCount((*C.struct_cPort)(p), C.int16_t(p.QueuesNumber-1)))
+func CheckRSSPacketCount(p *Port) int64 {
+	return int64(C.checkRSSPacketCount((*C.struct_cPort)(p), C.int16_t(p.QueuesNumber-1)))
 }
 
 func DecreaseRSS(p *Port) {

@@ -507,7 +507,7 @@ func (ff *flowFunction) checkInputRingClonable(min uint32) bool {
 			return true
 		}
 	case *receiveParameters:
-		if low.CheckRSSPacketCount(ff.Parameters.(*receiveParameters).port) > min {
+		if low.CheckRSSPacketCount(ff.Parameters.(*receiveParameters).port) > int64(min) {
 			return true
 		}
 	}
