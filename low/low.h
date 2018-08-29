@@ -364,6 +364,7 @@ void receiveRSS(uint16_t port, int16_t queue, struct rte_ring *out_ring, volatil
 	while (*flag == process) {
 		// Get packets from port
 		uint16_t rx_pkts_number = rte_eth_rx_burst(port, queue, bufs, BURST_SIZE);
+		printf("[DEBUG] Received %d packets\n", rx_pkts_number);
 		if (unlikely(rx_pkts_number == 0)) {
 			continue;
 		}
